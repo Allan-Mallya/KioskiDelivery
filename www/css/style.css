@@ -1,0 +1,66 @@
+/* css file */
+
+p3 {
+	font-style:italic;
+
+}
+#sub-title { overflow:hidden; 
+}
+
+#sub-left {
+	line-height: 50px;
+    width:100px;
+    float:left;
+    padding:5px;
+    text-align: center;
+    font-size: 300%;
+    /*
+    font-size: 12vw;
+    */
+}
+
+#sub-left-details {
+	line-height: 40px;
+    width:100px;
+    text-align: left;
+    font-size: 10vw;
+
+}
+#sub-right {
+    
+    float:right;
+    
+    float:left;
+    padding:10px;
+  
+}
+
+#right-panel {
+	    display: none;
+        font-family: 'Roboto','sans-serif';
+        line-height: 30px;
+        padding-left: 10px;
+      }
+
+ #right-panel select, #right-panel input {
+        font-size: 15px;
+      }
+
+      #right-panel select {
+        width: 100%;
+      }
+
+      #right-panel i {
+        font-size: 12px;
+      }
+      #right-panel {
+        
+        float: right;
+        width: 100%;
+        overflow: auto;
+    }
+
+#map {
+        height: 500px;
+      }
+

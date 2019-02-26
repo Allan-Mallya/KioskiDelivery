@@ -1,0 +1,106 @@
+    <!--
+    <script src="cordova.js"></script>
+    !-->
+     <script src="js/pouchdb-5.3.1.min.js"></script>
+    <script src="js/ng-cordova.min.js"></script>
+    <script async defer
+    src="http://maps.googleapis.com/maps/api/js?key=AIzaSyBDEHonAaVf0douP3tdO5f5snt-KU-oMZQ&callback=initMap">
+    </script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.8.3/jquery.min.js"></script>
+    
+    <script src="js/direction.js"></script>
+    <script src="js/processorder.js"></script>
+    
+<ion-view>
+<ion-content class="has-subheader">
+ 
+  
+  <div>
+     
+
+      <button class="button button-block button-positive" ng-click = "savedata()">Fullfil Order
+      </button>
+      </div>
+      <H1> Order Summary </H1>
+      <div class = "row">
+      <div class ="col col-35"> 
+      CUSTOMER NAME:<br>
+      {{order.billing_address.first_name}} {{order.billing_address.last_name}}
+      </div>
+      <div class = "col col -15">
+      ORDER NUMBER:<br>
+      {{order.order_number}}
+      </div>
+      <div class = "col col -15">
+      TOTAL:<br>
+      40
+      </div>
+      <div class = "col col-35">
+      PAYMENT METHOD:<br>
+      Cash on Delivery
+      </div>
+      </div>
+
+      <H1> Order Details </H1>
+       <div class = "row">
+       <div class = "col col -80">
+       PRODUCT
+       <p3 ng-repeat="line_item in order.line_items"><li> {{line_item.name}} x {{line_item.quantity}}</li><p3>
+       <br>
+       SUBTOTAL:
+       <br>
+       SHIPPING:
+       <br>
+       PAYMENT METHOD:
+       <br>
+       TOTAL:
+       <br>
+       </div>
+       <div class = "col col -20">
+       TOTAL
+       <p3 ng-repeat="line_item in order.line_items"><li>{{line_item.subtotal}}</li></p3>
+       <br>
+       {{order.subtotal}}(ex.tax)
+       <br>
+       {{order.shipping_methods}}
+       <br>
+       {{order.total}}
+       <br>
+       </div>
+       </div>
+
+ <!--
+    <ion-list>
+   <ion-item class="item-text-warp item-icon right">
+ <p><center> order id {{order.id}}</center></p>
+ </ion-item>
+
+ <ion-item class="item-text-warp item-icon right">
+ <p><center> first name {{order.billing_address.first_name }}</center></p>
+ </ion-item>
+
+ <ion-item class="item-text-warp item-icon right">
+ <p><center> last name {{order.billing_address.last_name}}</center></p>
+ </ion-item>
+
+ <ion-item class="item-text-warp item-icon right">
+ <p><center> item </center></p>
+ </ion-item>
+
+ <ion-item class="item-text-warp item-icon right">
+ <p><center> total {{order.total}}</center></p>
+ </ion-item>
+
+ <ion-item class="item-text-warp item-icon right">
+ <p><center> Latitude {{order.order_meta.latitude}}</center></p>
+ 
+ </ion-item>
+ <ion-item class="item-text-warp item-icon right">
+ <p><center> latitude {{order.order_meta.longitude}}</center></p>
+ </ion-item>
+ 
+  </ion-list>
+  !-->
+  </ion-content>
+</ion-view>
+</body>

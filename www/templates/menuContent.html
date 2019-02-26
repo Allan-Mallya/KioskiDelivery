@@ -1,0 +1,57 @@
+<ion-view>
+    <ion-nav-bar class = "bar-assertive">
+    <ion-nav-buttons side ="left">
+      
+      <button class= "button button-icon button-clear ion-navicon"menu-toggle="left">
+      </button>
+      </ion-nav-buttons>
+
+     <ion-nav-buttons side="right">
+     <button class= "button button-icon button-clear ion-checkmark-circled">
+      </button>
+      </ion-nav-buttons>
+    </ion-nav-bar>
+   <ion-header-bar class="bar bar-assertive">
+   <div class="title"><center> Orders</center></div>
+   </ion-header-bar>
+
+
+<div class="bar bar-subheader item-input-inset">
+<label class="item-input-inset">
+  <i class="icon ion-ios-search placeholder-icon"> </i>
+  <input type="search" placeholder="Search.." ng-model="searchText">
+</label>
+</div>
+
+<ion-content class="has-subheader">
+   <ion-list>
+     
+     <ion-item class="item-text-warp item-icon right" ng-repeat = "order in orders|orderBy:'order_meta.distance'" 
+     href="#/main/postDetail/{{order.id}}">
+      
+     <div id="sub-title">
+     <div id="sub-left">
+     {{order.order_meta.distance}}
+     <div id="sub-left-details">
+     &nbsp km
+     </div>
+     </div>
+     <div id="sub-right">
+     
+     <h3> {{order.order_meta.addressone}}, {{order.order_meta.addresstwo}} </h3>
+     <h3>    {{order.order_meta.addressthree}} </h3>
+     <a href="tel: {{order.billing_address.phone}}">
+     <p2> {{order.billing_address.first_name }}&nbsp{{order.billing_address.last_name}}</p2>                      
+     <p> {{order.billing_address.phone}} </a> </p>
+     <p3 ng-repeat="line_item in order.line_items"><li> {{line_item.name}} x {{line_item.quantity}}</li></p3>
+     <!--
+     <p>{{order.line_items.[$index].id}}</p>
+     
+     <p>{{items}} x{{quantity}} </p>
+     <p>{{order.note}}</p>
+     !-->
+     </div>
+     </div>
+     </ion-item>
+</ion-content>
+</ion-view>
